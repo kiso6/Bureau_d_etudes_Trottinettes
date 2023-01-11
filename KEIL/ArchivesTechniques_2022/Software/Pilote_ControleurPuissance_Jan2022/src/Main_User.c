@@ -43,8 +43,19 @@ lib : bibliothèque qui gère les périphériques du STM : Drivers_STM32F103_107
 
 // Choix de la fréquence PWM (en kHz)
 #define FPWM_Khz 20.0
-						
+#define Fe 5000.0
+#define Ft 400.0
 
+
+
+//On define les valeurs de R et L pour régler finement le correcteur
+#define R 1.0
+#define L	0.002		
+#define K1 1.0/R
+#define K2 1.0+12.0/10.0
+#define K3 10000.0/15100.0
+#define Gcapt 0.104
+#define Vbat 24.0
 
 //==========END USER DEFINE========================================================================================
 
@@ -64,21 +75,30 @@ void IT_Principale(void);
 					La mise à jour du rapport cyclique se fait à la fréquence 1kHz.
 
 //=================================================================================================================*/
+float Ki,Kp,C1,C2;
 
+float eps[2] = {0.0, 0.0};
+float alpha[2] = {-0.5, 0.0};
 
 float Te,Te_us;
+// ------------- Calculs des coef de filtres -------------------
 
+	
 int main (void)
 {
 // !OBLIGATOIRE! //	
 Conf_Generale_IO_Carte();	
-	
+// ------------- Discret, choix de Te -------------------	
+Te=	1/Fe; // en seconde
+Te_us=Te*1000000.0; // conversion en µs pour utilisation dans la fonction d'init d'interruption
 
 	
-// ------------- Discret, choix de Te -------------------	
-Te=	1.0; // en seconde
-Te_us=Te*1000000.0; // conversion en µs pour utilisation dans la fonction d'init d'interruption
-	
+Ki = 2*3.1415*Ft*R/(2*Vbat*Gcapt*K2*K3);
+Kp = Ki*L/R;
+C1 = Kp+(Te*(Ki/2.0));
+C2 = Kp-(Te*(Ki/2.0));
+
+
 
 //______________ Ecrire ici toutes les CONFIGURATIONS des périphériques ________________________________	
 // Paramétrage ADC pour entrée analogique
@@ -109,10 +129,6 @@ Conf_IT_Principale_Systick(IT_Principale, Te_us);
 
 }
 
-
-
-
-
 //=================================================================================================================
 // 					FONCTION D'INTERRUPTION PRINCIPALE SYSTICK
 //=================================================================================================================
@@ -121,9 +137,16 @@ int Courant_1,Cons_In;
 
 void IT_Principale(void)
 {
- Cons_In=Entree_10V();
- R_Cyc_1(Cons_In);
- R_Cyc_2(Cons_In);
+ //Cons_In=Entree_10V();
+
+
+	eps[0] = (Entree_3V3()-I1())*3.3/4095;
+	alpha[0] = C1*eps[0]+C2*eps[1]-alpha[1];
+	Cons_In = (int)(alpha[0]*4095.0)+2048;
+	R_Cyc_1(Cons_In);
+  R_Cyc_2(Cons_In);
+	eps[1]=eps[0];
+	alpha[1]=alpha[0];
 	
 }
 

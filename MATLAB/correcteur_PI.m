@@ -34,14 +34,14 @@ P=pole(G);
 
 % Correcteur continu
 Kci = 2*pi*400/(K_G)
-Kcp=Kci/(80*2*pi);
+Kcp=Kci*L/R;
 C = pid(Kcp,Kci,0,0);
 bode(C*G);
 syst = feedback(C*G,1);
 %bode(syst)
 
 %Correcteur discret
-Te=1/800; %A régler tq Shannon
+Te=1/5000; %A régler tq Shannon
 T1=Kcp/Kci;
 T2=1/Kci;
 Cz=c2d(C,Te,'tustin');
