@@ -134,13 +134,14 @@ Conf_IT_Principale_Systick(IT_Principale, Te_us);
 //=================================================================================================================
 int Courant_1,Cons_In;
 
-
+int E,I;
 void IT_Principale(void)
 {
  //Cons_In=Entree_10V();
+	E =Entree_3V3();
+	I = I1();
 
-
-	eps[0] = (Entree_3V3()-I1())*3.3/4095;
+	eps[0] = (E-I)*3.3/4095;
 	alpha[0] = C1*eps[0]-C2*eps[1]+alpha[1];
 	
 	alpha[0]=(alpha[0] > 0.5)?0.5:(alpha[0]<-0.5)?-0.5:alpha[0]; //saturation
