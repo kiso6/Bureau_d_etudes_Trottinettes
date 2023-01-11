@@ -78,7 +78,7 @@ void IT_Principale(void);
 float Ki,Kp,C1,C2;
 
 float eps[2] = {0.0, 0.0};
-float alpha[2] = {-0.5, 0.0};
+float alpha[2] = {0.0, 0.0};
 
 float Te,Te_us;
 // ------------- Calculs des coef de filtres -------------------
@@ -93,7 +93,7 @@ Te=	1/Fe; // en seconde
 Te_us=Te*1000000.0; // conversion en µs pour utilisation dans la fonction d'init d'interruption
 
 	
-Ki = 2*3.1415*Ft*R/(2*Vbat*Gcapt*K2*K3);
+Ki = 2.0*3.1415*Ft*R/(2*Vbat*Gcapt*K2*K3);
 Kp = Ki*L/R;
 C1 = Kp+(Te*(Ki/2.0));
 C2 = Kp-(Te*(Ki/2.0));
@@ -141,7 +141,10 @@ void IT_Principale(void)
 
 
 	eps[0] = (Entree_3V3()-I1())*3.3/4095;
-	alpha[0] = C1*eps[0]+C2*eps[1]-alpha[1];
+	alpha[0] = C1*eps[0]-C2*eps[1]+alpha[1];
+	
+	alpha[0]=(alpha[0] > 0.5)?0.5:(alpha[0]<-0.5)?-0.5:alpha[0]; //saturation
+	
 	Cons_In = (int)(alpha[0]*4095.0)+2048;
 	R_Cyc_1(Cons_In);
   R_Cyc_2(Cons_In);

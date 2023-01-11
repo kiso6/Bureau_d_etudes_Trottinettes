@@ -11,8 +11,10 @@ Section Cross References
     main_user.o(i.IT_Principale) refers to ddiv.o(.text) for __aeabi_ddiv
     main_user.o(i.IT_Principale) refers to d2f.o(.text) for __aeabi_d2f
     main_user.o(i.IT_Principale) refers to fmul.o(.text) for __aeabi_fmul
-    main_user.o(i.IT_Principale) refers to fadd.o(.text) for __aeabi_fadd
+    main_user.o(i.IT_Principale) refers to fadd.o(.text) for __aeabi_fsub
     main_user.o(i.IT_Principale) refers to f2d.o(.text) for __aeabi_f2d
+    main_user.o(i.IT_Principale) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    main_user.o(i.IT_Principale) refers to cdcmple.o(.text) for __aeabi_cdcmple
     main_user.o(i.IT_Principale) refers to dfixi.o(.text) for __aeabi_d2iz
     main_user.o(i.IT_Principale) refers to main_user.o(.data) for eps
     main_user.o(i.IT_Principale) refers to toolbox_nrj_v4.o(.data) for Resolution
@@ -329,17 +331,17 @@ Image Symbol Table
     i.Entree_3V3                             0x08002b28   Section        0  toolbox_nrj_v4.o(i.Entree_3V3)
     i.I1                                     0x08002b7c   Section        0  toolbox_nrj_v4.o(i.I1)
     i.IT_Principale                          0x08002bd0   Section        0  main_user.o(i.IT_Principale)
-    i.Inv_Voie                               0x08002cb8   Section        0  toolbox_nrj_v4.o(i.Inv_Voie)
-    i.SetSysClock                            0x08002d00   Section        0  system_stm32f10x.o(i.SetSysClock)
-    SetSysClock                              0x08002d01   Thumb Code     8  system_stm32f10x.o(i.SetSysClock)
-    i.SetSysClockTo72                        0x08002d08   Section        0  system_stm32f10x.o(i.SetSysClockTo72)
-    SetSysClockTo72                          0x08002d09   Thumb Code   214  system_stm32f10x.o(i.SetSysClockTo72)
-    i.SystemInit                             0x08002de8   Section        0  system_stm32f10x.o(i.SystemInit)
-    i.Triangle                               0x08002e48   Section        0  toolbox_nrj_v4.o(i.Triangle)
-    i.__scatterload_copy                     0x08002e9c   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08002eaa   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08002eac   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.main                                   0x08002ebc   Section        0  main_user.o(i.main)
+    i.Inv_Voie                               0x08002d04   Section        0  toolbox_nrj_v4.o(i.Inv_Voie)
+    i.SetSysClock                            0x08002d4c   Section        0  system_stm32f10x.o(i.SetSysClock)
+    SetSysClock                              0x08002d4d   Thumb Code     8  system_stm32f10x.o(i.SetSysClock)
+    i.SetSysClockTo72                        0x08002d54   Section        0  system_stm32f10x.o(i.SetSysClockTo72)
+    SetSysClockTo72                          0x08002d55   Thumb Code   214  system_stm32f10x.o(i.SetSysClockTo72)
+    i.SystemInit                             0x08002e34   Section        0  system_stm32f10x.o(i.SystemInit)
+    i.Triangle                               0x08002e94   Section        0  toolbox_nrj_v4.o(i.Triangle)
+    i.__scatterload_copy                     0x08002ee8   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08002ef6   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08002ef8   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.main                                   0x08002f08   Section        0  main_user.o(i.main)
     .data                                    0x20000000   Section       48  main_user.o(.data)
     .data                                    0x20000030   Section        6  toolbox_nrj_v4.o(.data)
     .data                                    0x20000038   Section        4  timer_systick.o(.data)
@@ -539,16 +541,16 @@ Image Symbol Table
     Conf_IT_Principale_Systick               0x08002af9   Thumb Code    48  toolbox_nrj_v4.o(i.Conf_IT_Principale_Systick)
     Entree_3V3                               0x08002b29   Thumb Code    78  toolbox_nrj_v4.o(i.Entree_3V3)
     I1                                       0x08002b7d   Thumb Code    78  toolbox_nrj_v4.o(i.I1)
-    IT_Principale                            0x08002bd1   Thumb Code   194  main_user.o(i.IT_Principale)
-    Inv_Voie                                 0x08002cb9   Thumb Code    62  toolbox_nrj_v4.o(i.Inv_Voie)
-    SystemInit                               0x08002de9   Thumb Code    78  system_stm32f10x.o(i.SystemInit)
-    Triangle                                 0x08002e49   Thumb Code    74  toolbox_nrj_v4.o(i.Triangle)
-    __scatterload_copy                       0x08002e9d   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08002eab   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08002ead   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    main                                     0x08002ebd   Thumb Code   350  main_user.o(i.main)
-    Region$$Table$$Base                      0x08003068   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08003088   Number         0  anon$$obj.o(Region$$Table)
+    IT_Principale                            0x08002bd1   Thumb Code   262  main_user.o(i.IT_Principale)
+    Inv_Voie                                 0x08002d05   Thumb Code    62  toolbox_nrj_v4.o(i.Inv_Voie)
+    SystemInit                               0x08002e35   Thumb Code    78  system_stm32f10x.o(i.SystemInit)
+    Triangle                                 0x08002e95   Thumb Code    74  toolbox_nrj_v4.o(i.Triangle)
+    __scatterload_copy                       0x08002ee9   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08002ef7   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08002ef9   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    main                                     0x08002f09   Thumb Code   350  main_user.o(i.main)
+    Region$$Table$$Base                      0x080030b4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080030d4   Number         0  anon$$obj.o(Region$$Table)
     Ki                                       0x20000000   Data           4  main_user.o(.data)
     Kp                                       0x20000004   Data           4  main_user.o(.data)
     C1                                       0x20000008   Data           4  main_user.o(.data)
@@ -589,9 +591,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000318c, Max: 0x00020000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000031d8, Max: 0x00020000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00003088, Max: 0x00020000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000030d4, Max: 0x00020000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -649,33 +651,33 @@ Memory Map of the image
     0x08002af8   0x08002af8   0x00000030   Code   RO           76    i.Conf_IT_Principale_Systick  toolbox_nrj_v4.o
     0x08002b28   0x08002b28   0x00000054   Code   RO           80    i.Entree_3V3        toolbox_nrj_v4.o
     0x08002b7c   0x08002b7c   0x00000054   Code   RO           81    i.I1                toolbox_nrj_v4.o
-    0x08002bd0   0x08002bd0   0x000000e8   Code   RO            4    i.IT_Principale     main_user.o
-    0x08002cb8   0x08002cb8   0x00000048   Code   RO           86    i.Inv_Voie          toolbox_nrj_v4.o
-    0x08002d00   0x08002d00   0x00000008   Code   RO          322    i.SetSysClock       system_stm32f10x.o
-    0x08002d08   0x08002d08   0x000000e0   Code   RO          323    i.SetSysClockTo72   system_stm32f10x.o
-    0x08002de8   0x08002de8   0x00000060   Code   RO          325    i.SystemInit        system_stm32f10x.o
-    0x08002e48   0x08002e48   0x00000054   Code   RO           87    i.Triangle          toolbox_nrj_v4.o
-    0x08002e9c   0x08002e9c   0x0000000e   Code   RO          579    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08002eaa   0x08002eaa   0x00000002   Code   RO          580    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08002eac   0x08002eac   0x0000000e   Code   RO          581    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08002eba   0x08002eba   0x00000002   PAD
-    0x08002ebc   0x08002ebc   0x000001ac   Code   RO            5    i.main              main_user.o
-    0x08003068   0x08003068   0x00000020   Data   RO          577    Region$$Table       anon$$obj.o
+    0x08002bd0   0x08002bd0   0x00000134   Code   RO            4    i.IT_Principale     main_user.o
+    0x08002d04   0x08002d04   0x00000048   Code   RO           86    i.Inv_Voie          toolbox_nrj_v4.o
+    0x08002d4c   0x08002d4c   0x00000008   Code   RO          322    i.SetSysClock       system_stm32f10x.o
+    0x08002d54   0x08002d54   0x000000e0   Code   RO          323    i.SetSysClockTo72   system_stm32f10x.o
+    0x08002e34   0x08002e34   0x00000060   Code   RO          325    i.SystemInit        system_stm32f10x.o
+    0x08002e94   0x08002e94   0x00000054   Code   RO           87    i.Triangle          toolbox_nrj_v4.o
+    0x08002ee8   0x08002ee8   0x0000000e   Code   RO          579    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08002ef6   0x08002ef6   0x00000002   Code   RO          580    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08002ef8   0x08002ef8   0x0000000e   Code   RO          581    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08002f06   0x08002f06   0x00000002   PAD
+    0x08002f08   0x08002f08   0x000001ac   Code   RO            5    i.main              main_user.o
+    0x080030b4   0x080030b4   0x00000020   Data   RO          577    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08003088, Size: 0x00000528, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080030d4, Size: 0x00000528, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08003088   0x00000030   Data   RW            6    .data               main_user.o
-    0x20000030   0x080030b8   0x00000006   Data   RW           93    .data               toolbox_nrj_v4.o
-    0x20000036   0x080030be   0x00000002   PAD
-    0x20000038   0x080030c0   0x00000004   Data   RW          368    .data               Drivers_STM32F103_107_2021b.lib(timer_systick.o)
-    0x2000003c   0x080030c4   0x0000001c   Data   RW          436    .data               Drivers_STM32F103_107_2021b.lib(nvic_it_ext.o)
-    0x20000058   0x080030e0   0x0000000c   Data   RW          462    .data               Drivers_STM32F103_107_2021b.lib(adc_dma.o)
-    0x20000064   0x080030ec   0x000000a0   Data   RW          491    .data               Drivers_STM32F103_107_2021b.lib(timer_1234.o)
+    0x20000000   0x080030d4   0x00000030   Data   RW            6    .data               main_user.o
+    0x20000030   0x08003104   0x00000006   Data   RW           93    .data               toolbox_nrj_v4.o
+    0x20000036   0x0800310a   0x00000002   PAD
+    0x20000038   0x0800310c   0x00000004   Data   RW          368    .data               Drivers_STM32F103_107_2021b.lib(timer_systick.o)
+    0x2000003c   0x08003110   0x0000001c   Data   RW          436    .data               Drivers_STM32F103_107_2021b.lib(nvic_it_ext.o)
+    0x20000058   0x0800312c   0x0000000c   Data   RW          462    .data               Drivers_STM32F103_107_2021b.lib(adc_dma.o)
+    0x20000064   0x08003138   0x000000a0   Data   RW          491    .data               Drivers_STM32F103_107_2021b.lib(timer_1234.o)
     0x20000104        -       0x00000020   Zero   RW          461    .bss                Drivers_STM32F103_107_2021b.lib(adc_dma.o)
-    0x20000124   0x0800318c   0x00000004   PAD
+    0x20000124   0x080031d8   0x00000004   PAD
     0x20000128        -       0x00000400   Zero   RW          312    STACK               startup_stm32f10x_md.o
 
 
@@ -686,14 +688,14 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       332         34          0          0          0       2682   clock.o
-       660        116          0         48          0     208466   main_user.o
-        36          8        236          0       1024        876   startup_stm32f10x_md.o
-       328         28          0          0          0       2237   system_stm32f10x.o
-       924         58          0          6          0       4924   toolbox_nrj_v4.o
+       332         34          0          0          0       2582   clock.o
+       736        124          0         48          0     208418   main_user.o
+        36          8        236          0       1024        856   startup_stm32f10x_md.o
+       328         28          0          0          0       2157   system_stm32f10x.o
+       924         58          0          6          0       4744   toolbox_nrj_v4.o
 
     ----------------------------------------------------------------------
-      2280        244        268         56       1024     219185   Object Totals
+      2356        252        268         56       1024     218757   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          0          2          0          0   (incl. Padding)
 
@@ -763,15 +765,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     12156       1016        268        260       1060     461464   Grand Totals
-     12156       1016        268        260       1060     461464   ELF Image Totals
-     12156       1016        268        260          0          0   ROM Totals
+     12232       1024        268        260       1060     461036   Grand Totals
+     12232       1024        268        260       1060     461036   ELF Image Totals
+     12232       1024        268        260          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                12424 (  12.13kB)
+    Total RO  Size (Code + RO Data)                12500 (  12.21kB)
     Total RW  Size (RW Data + ZI Data)              1320 (   1.29kB)
-    Total ROM Size (Code + RO Data + RW Data)      12684 (  12.39kB)
+    Total ROM Size (Code + RO Data + RW Data)      12760 (  12.46kB)
 
 ==============================================================================
 
