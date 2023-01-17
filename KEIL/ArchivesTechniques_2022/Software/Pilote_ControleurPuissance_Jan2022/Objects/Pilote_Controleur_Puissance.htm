@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Pilote_Controleur_Puissance.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Pilote_Controleur_Puissance.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Jan 11 16:28:54 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Jan 17 13:37:23 2023
 <BR><P>
 <H3>Maximum Stack Usage =        272 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -518,6 +518,7 @@ Global Symbols
 <LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_Period
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TimingADC_ActiveADC
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Triangle
+<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IT_Principale
 </UL>
 
@@ -806,8 +807,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IT_Principale
 </UL>
 
-<P><STRONG><a name="[38]"></a>IT_Principale</STRONG> (Thumb, 262 bytes, Stack size 40 bytes, main_user.o(i.IT_Principale))
-<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = IT_Principale &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
+<P><STRONG><a name="[38]"></a>IT_Principale</STRONG> (Thumb, 272 bytes, Stack size 32 bytes, main_user.o(i.IT_Principale))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = IT_Principale &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
@@ -851,10 +852,11 @@ Global Symbols
 
 <P><STRONG><a name="[92]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
-<P><STRONG><a name="[35]"></a>main</STRONG> (Thumb, 350 bytes, Stack size 24 bytes, main_user.o(i.main))
+<P><STRONG><a name="[35]"></a>main</STRONG> (Thumb, 328 bytes, Stack size 24 bytes, main_user.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = main &rArr; Triangle &rArr; PWM_Init &rArr; Timer_1234_Init &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
+<BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv

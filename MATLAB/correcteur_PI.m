@@ -45,3 +45,8 @@ Te=1/5000; %A régler tq Shannon
 T1=Kcp/Kci;
 T2=1/Kci;
 Cz=c2d(C,Te,'tustin');
+
+
+%SIMULATION POUR COMPARER AVEC VRAIE VIE
+step(syst)%test échelon unitaire
+bode(syst)%test en fréquence à comparer avec l oscillo
