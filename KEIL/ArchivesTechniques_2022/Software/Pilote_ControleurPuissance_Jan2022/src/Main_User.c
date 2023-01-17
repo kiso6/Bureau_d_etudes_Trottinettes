@@ -49,13 +49,13 @@ lib : bibliothèque qui gère les périphériques du STM : Drivers_STM32F103_107
 
 
 //On define les valeurs de R et L pour régler finement le correcteur
-#define R 1.0
-#define L	0.002		
-#define K1 1.0/R
-#define K2 1.0+12.0/10.0
-#define K3 10000.0/15100.0
-#define Gcapt 0.104
-#define Vbat 24.0
+#define R (float)1.0
+#define L	(float)0.002		
+#define K1 (float)1.0/R
+#define K2 (float)(1.0+(12.0/10.0))
+#define K3 (float)(10000.0/15100.0)
+#define Gcapt (float)0.104
+#define Vbat (float)24.0
 
 //==========END USER DEFINE========================================================================================
 
@@ -83,7 +83,6 @@ float alpha[2] = {0.0, 0.0};
 float Te,Te_us;
 // ------------- Calculs des coef de filtres -------------------
 
-	
 int main (void)
 {
 // !OBLIGATOIRE! //	
@@ -92,9 +91,9 @@ Conf_Generale_IO_Carte();
 Te=	1/Fe; // en seconde
 Te_us=Te*1000000.0; // conversion en µs pour utilisation dans la fonction d'init d'interruption
 
-	
-Ki = 2.0*3.1415*Ft*R/(2*Vbat*Gcapt*K2*K3);
-Kp = Ki*L/R;
+Ki = (2.0*3.1415*Ft)/(2.0*Vbat*K2*K3*K1*Gcapt);
+//Ki = 345.55;
+Kp = Ki*(L/R);
 C1 = Kp+(Te*(Ki/2.0));
 C2 = Kp-(Te*(Ki/2.0));
 
